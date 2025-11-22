@@ -1,84 +1,81 @@
-.Orange{
-    background-color: rgb(226, 103, 59);
-    width: 100vw;
-    height: 100vh;
-     display: flex;                 /* make inner div a flex container */
-    justify-content: center;       /* center horizontally */
-    align-items: center; 
-    color: azure;
-    
+.Orange {
+  background-color: rgb(226, 103, 59);
+  width: 100vw;
+  height: 100vh;
+  display: flex; /* make inner div a flex container */
+  justify-content: center; /* center horizontally */
+  align-items: center;
+  color: azure;
 }
 
-.Blue{
-       background-color: rgb(37, 10, 127);
-    width: 100vw;
-    height: 100vh;
-     display: flex;                 /* make inner div a flex container */
-    justify-content: center;       /* center horizontally */
-    align-items: center; 
-    color: azure;
-   
+.Blue {
+  background-color: rgb(37, 10, 127);
+  width: 100vw;
+  height: 100vh;
+  display: flex; /* make inner div a flex container */
+  justify-content: center; /* center horizontally */
+  align-items: center;
+  color: azure;
 }
 
-.both{
-   display: flex;
+.both {
+  display: flex;
 }
 
-.images-grid{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 2px;
-     padding: 5px;
+.images-grid {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 2px;
+  width: 233px;
 }
 
-.numbers{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    width: 75vw;
-    height: 50vh;
-     border: 10px solid orange;
+.numbers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 75vw;
+  height: 50vh;
+  border: 10px solid orange;
 }
 
-.LG{
-background-color: rgb(92, 207, 122);
+.LG {
+  background-color: rgb(92, 207, 122);
 }
 
-.BB{
-   background-color: rgb(75, 129, 204); 
+.BB {
+  background-color: rgb(75, 129, 204);
 }
 
-.L{
-    background-color: blueviolet;
+.L {
+  background-color: blueviolet;
 }
-.DG{
-    background-color: darkgreen;
-}
-
-.Y{
-    background-color: gold;
+.DG {
+  background-color: darkgreen;
 }
 
-.O{
-    background-color: coral;
+.Y {
+  background-color: gold;
 }
 
-.R{
-    background-color: crimson;
+.O {
+  background-color: coral;
 }
 
-.G{
-    background-color: green;
+.R {
+  background-color: crimson;
+}
+
+.G {
+  background-color: green;
 }
 
 .numbers h1 {
-    margin: 0;       /* remove default margin */
-    padding: 0;      /* remove default padding just in case */
-    display: flex;   /* optional, makes text centered if needed */
-    justify-content: center; /* center horizontally */
-    align-items: center;     /* center vertically */
-    height: 100%;           /* make h1 fill the grid cell */
+  margin: 0; /* remove default margin */
+  padding: 0; /* remove default padding just in case */
+  display: flex; /* optional, makes text centered if needed */
+  justify-content: center; /* center horizontally */
+  align-items: center; /* center vertically */
+  height: 100%; /* make h1 fill the grid cell */
 }
-
 
 .grid-container {
   display: grid;
@@ -119,5 +116,5 @@ background-color: rgb(92, 207, 122);
   flex: 1; /* Make all boxes equal width */
   color: white;
   font-size: 4em;
-  font-family: 'Times New Roman', serif;
+  font-family: "Times New Roman", serif;
 }

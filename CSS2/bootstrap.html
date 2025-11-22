@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hero Example - Bootstrap</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome for icons (optional) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      /* ---------- Custom styles to match the example ---------- */
+      body {
+        font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+        background: #fff;
+      }
+
+      .hero {
+        padding: 4rem 0;
+      }
+
+      .hero-title {
+        font-weight: 800;
+        font-size: 2.5rem;
+        line-height: 1.05;
+      }
+
+      @media (min-width: 992px) {
+        .hero-title {
+          font-size: 3rem;
+        }
+      }
+
+      .hero-sub {
+        color: #6b7280; /* gray-500 */
+        margin-top: 0.75rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .btn-join {
+        background: linear-gradient(90deg, #6b46ff, #7c3aed);
+        color: #fff;
+        border: none;
+        padding: 0.6rem 1.1rem;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(124, 58, 237, 0.18);
+      }
+
+      .play-btn {
+        margin-left: 0.75rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 2px solid #e6e9f2;
+      }
+
+      /* Right image card */
+      .hero-image-wrap {
+        position: relative;
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+      }
+
+      .hero-main-card {
+        background: linear-gradient(180deg, #fff, #f8fafc);
+        border-radius: 18px;
+        padding: 1rem;
+        box-shadow: 0 12px 30px rgba(16, 24, 40, 0.08);
+        position: relative;
+      }
+
+      .profile-photo {
+        width: 170px;
+        height: 210px;
+        object-fit: cover;
+        border-radius: 12px;
+        transform: translateX(20px) translateY(-10px);
+        position: relative;
+        z-index: 2;
+        box-shadow: 0 12px 24px rgba(99, 102, 241, 0.12);
+      }
+
+      .badge-small {
+        position: absolute;
+        background: #fff;
+        border-radius: 10px;
+        padding: 0.5rem;
+        box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+        z-index: 3;
+      }
+
+      .badge-top-right {
+        right: -8px;
+        top: -8px;
+        width: 120px;
+      }
+      .badge-bottom {
+        left: 40px;
+        bottom: -18px;
+        width: 160px;
+      }
+
+      /* statistics row */
+      .stats {
+        border-top: 1px solid #eef2ff;
+        margin-top: 3rem;
+        padding-top: 1.25rem;
+      }
+
+      .stat-item {
+        text-align: center;
+        padding: 1rem 0;
+      }
+
+      .stat-item .num {
+        font-weight: 700;
+        font-size: 1.25rem;
+      }
+
+      /* small visual elements (trophy, target) */
+      .floating {
+        position: absolute;
+        z-index: 1;
+      }
+      .float-trophy {
+        right: 14%;
+        top: -12%;
+        transform: rotate(-6deg);
+      }
+      .float-target {
+        right: 4%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img
+            src="c:\Users\DELL\Downloads\orange_jordan_logo.jpg"
+            alt="Orange"
+            height="50"
+          />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMain"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="#">Landings</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Pages</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Accounts</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Mega Menu</a></li>
+            <li class="nav-item ms-lg-3">
+              <a class="btn btn-outline-secondary btn-sm" href="#">Sign in</a>
+            </li>
+            <li class="nav-item ms-2">
+              <a
+                class="btn btn-primary btn-sm"
+                style="background: #7c3aed; border: none"
+                href="#"
+                >Sign up</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- LEFT: text -->
+          <div class="col-lg-6">
+            <div class="d-flex align-items-center mb-3">
+              <i class="fa-solid fa-check text-success me-2"></i>
+              <small class="text-success"
+                >Most trusted education platform</small
+              >
+            </div>
+
+            <h1 class="hero-title">Grow your skills and<br />advance career</h1>
+
+            <p class="hero-sub">
+              Start, switch, or advance your career with more than 5,000
+              courses, Professional Certificates, and degrees from world-class
+              universities and companies.
+            </p>
+
+            <div class="d-flex align-items-center">
+              <button class="btn btn-join btn-lg">Join Free Now</button>
+              <a href="#" class="play-btn ms-3" title="Watch demo">
+                <i class="fa-solid fa-play"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- RIGHT: image + small cards -->
+          <div class="col-lg-6">
+            <div
+              class="hero-image-wrap d-flex justify-content-center justify-content-lg-end"
+            >
+              <div class="hero-main-card" style="width: 360px">
+                <!-- floating small badge (instructor) -->
+                <div
+                  class="badge-small badge-top-right d-flex gap-2 align-items-center"
+                >
+              
+                  <div>
+                    <small class="d-block">Qualified Instructor</small>
+                    <small class="text-muted">3 available</small>
+                  </div>
+                </div>
+
+                <div class="d-flex align-items-start">
+                  <!-- profile image (right side in the example) -->
+                  <img
+                    src="c:\Users\DELL\Downloads\student.jpg"
+                    alt="student"
+                    class="profile-photo ms-auto"
+                  />
+
+                  <!-- invisible spacer or additional decorations -->
+                  <div style="width: 18px"></div>
+                </div>
+
+                <!-- small stats card overlapping bottom -->
+                <div class="badge-small badge-bottom">
+                  <div style="font-size: 0.8rem; font-weight: 700">
+                    Weekly Spent Hours
+                  </div>
+                  <div style="font-size: 0.75rem; color: #6b7280">
+                    35 hrs 40 mins
+                  </div>
+                  <div class="mt-2" style="height: 40px">
+                    <!-- simple bar chart using divs -->
+                    <div
+                      style="
+                        display: flex;
+                        gap: 6px;
+                        align-items: end;
+                        height: 100%;
+                      "
+                    >
+                      <div
+                        style="
+                          width: 18%;
+                          background: #f1eaff;
+                          height: 40%;
+                          border-radius: 4px;
+                        "
+                      ></div>
+                      <div
+                        style="
+                          width: 18%;
+                          background: #f1eaff;
+                          height: 60%;
+                          border-radius: 4px;
+                        "
+                      ></div>
+                      <div
+                        style="
+                          width: 18%;
+                          background: #7c3aed;
+                          height: 80%;
+                          border-radius: 4px;
+                        "
+                      ></div>
+                      <div
+                        style="
+                          width: 18%;
+                          background: #f1eaff;
+                          height: 40%;
+                          border-radius: 4px;
+                        "
+                      ></div>
+                      <div
+                        style="
+                          width: 18%;
+                          background: #f1eaff;
+                          height: 30%;
+                          border-radius: 4px;
+                        "
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- decorative floating elements -->
+                <img
+                  src="c:\Users\DELL\Downloads\thropy.jpg"
+                  class="floating float-trophy"
+                  alt="trophy"
+                />
+            
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STATS ROW -->
+        <div class="row stats mt-5">
+          <div class="col-6 col-md-3 stat-item">
+            <div class="mb-2">
+              <i class="fa-solid fa-certificate fa-2x text-primary"></i>
+            </div>
+            <div class="num">316,000+</div>
+            <div class="text-muted">Qualified Instructor</div>
+          </div>
+
+          <div class="col-6 col-md-3 stat-item">
+            <div class="mb-2">
+              <i class="fa-solid fa-user-group fa-2x text-warning"></i>
+            </div>
+            <div class="num">1.8 Billion+</div>
+            <div class="text-muted">Course enrolments</div>
+          </div>
+
+          <div class="col-6 col-md-3 stat-item">
+            <div class="mb-2">
+              <i class="fa-solid fa-tv fa-2x text-purple"></i>
+            </div>
+            <div class="num">41,000+</div>
+            <div class="text-muted">Courses in 42 languages</div>
+          </div>
+
+          <div class="col-6 col-md-3 stat-item">
+            <div class="mb-2">
+              <i class="fa-solid fa-film fa-2x text-success"></i>
+            </div>
+            <div class="num">179,000+</div>
+            <div class="text-muted">Online Videos</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ================= POPULAR COURSES ================= -->
+    <section class="popular-courses py-5">
+      <div class="container">
+        <!-- Title -->
+        <div class="text-center mb-4">
+          <h2 class="fw-bold">Most Popular Courses</h2>
+          <p class="text-muted">
+            These are the most popular courses among Geeks Courses learners
+            worldwide in year 2022
+          </p>
+        </div>
+
+        <!-- Category Tabs (static - no JS) -->
+        <div class="d-flex justify-content-center gap-3 mb-5 flex-wrap">
+          <span class="badge bg-light text-dark px-4 py-2">Development</span>
+          <span class="badge bg-light text-dark px-4 py-2">Design</span>
+          <span class="badge bg-light text-dark px-4 py-2">Marketing</span>
+          <span class="badge bg-light text-dark px-4 py-2">Business</span>
+          <span class="badge bg-light text-dark px-4 py-2">Health</span>
+        </div>
+
+        <!-- Courses Grid -->
+        <div class="row g-4">
+          <!-- COURSE CARD (Repeatable) -->
+          <div class="col-md-3">
+            <div class="course-card shadow-sm rounded overflow-hidden">
+              <div class="course-img bg-warning text-center py-4">
+                <img src="c:\Users\DELL\Downloads\courses.png" width="80" />
+              </div>
+
+              <div class="p-3">
+                <span class="badge bg-info">Intermediate</span>
+
+                <h6 class="mt-2 fw-bold">
+                  How to easily create a website with JS
+                </h6>
+                <p class="text-muted small mb-1">By: Claire Evans</p>
+
+                <div class="d-flex align-items-center small text-warning mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                  <span class="text-muted ms-1">(4.5)</span>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold">$39.00</span>
+                  <a href="#" class="text-primary small">Get Enrolled</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CSS Card -->
+          <div class="col-md-3">
+            <div class="course-card shadow-sm rounded overflow-hidden">
+              <div class="course-img bg-primary text-center py-4">
+                <img src="c:\Users\DELL\Downloads\courses.png" width="80" />
+              </div>
+
+              <div class="p-3">
+                <span class="badge bg-danger">Beginner</span>
+
+                <h6 class="mt-2 fw-bold">CSS: ultimate CSS course</h6>
+                <p class="text-muted small mb-1">By: Carolyn Watson</p>
+
+                <div class="d-flex align-items-center small text-warning mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                  <span class="text-muted ms-1">(4.5)</span>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold">$30.00</span>
+                  <a href="#" class="text-primary small">Get Enrolled</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gatsby Card -->
+          <div class="col-md-3">
+            <div class="course-card shadow-sm rounded overflow-hidden">
+              <div class="course-img bg-purple text-center py-4">
+                <img src="c:\Users\DELL\Downloads\courses.png" width="80" />
+              </div>
+
+              <div class="p-3">
+                <span class="badge bg-info">Intermediate</span>
+
+                <h6 class="mt-2 fw-bold">The Gatsby Course: build web</h6>
+                <p class="text-muted small mb-1">By: Floyd Amal</p>
+
+                <div class="d-flex align-items-center small text-warning mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                  <span class="text-muted ms-1">(4.5)</span>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold">$34.00</span>
+                  <a href="#" class="text-primary small">Get Enrolled</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- WordPress Card -->
+          <div class="col-md-3">
+            <div class="course-card shadow-sm rounded overflow-hidden">
+              <div class="course-img bg-info text-center py-4">
+                <img src="c:\Users\DELL\Downloads\courses.png" width="80" />
+              </div>
+
+              <div class="p-3">
+                <span class="badge bg-warning">Advance</span>
+
+                <h6 class="mt-2 fw-bold">WordPress introduction</h6>
+                <p class="text-muted small mb-1">By: Victor Elliot</p>
+
+                <div class="d-flex align-items-center small text-warning mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                  <span class="text-muted ms-1">(4.5)</span>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold">$39.00</span>
+                  <a href="#" class="text-primary small">Get Enrolled</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Second row - React -->
+          <div class="col-md-3">
+            <div class="course-card shadow-sm rounded overflow-hidden">
+              <div class="course-img bg-info text-center py-4">
+                <img src="c:\Users\DELL\Downloads\courses.png" width="80" />
+              </div>
+
+              <div class="p-3">
+                <span class="badge bg-info">Intermediate</span>
+
+                <h6 class="mt-2 fw-bold">
+                  How to easily create a website with React
+                </h6>
+                <p class="text-muted small mb-1">By: Morris Mccoy</p>
+
+                <div class="d-flex align-items-center small text-warning mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                  <span class="text-muted ms-1">(4.5)</span>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold">$29.00</span>
+                  <a href="#" class="text-primary small">Get Enrolled</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- GraphQL -->
+          <div class="col-md-3">
+            <div class="course-card shadow-sm rounded overflow-hidden">
+              <div class="course-img bg-pink text-center py-4">
+                <img src="c:\Users\DELL\Downloads\courses.png" width="80" />
+              </div>
+
+              <div class="p-3">
+                <span class="badge bg-success">Beginner</span>
+
+                <h6 class="mt-2 fw-bold">GraphQL introduction</h6>
+                <p class="text-muted small mb-1">By: Michael Clifford</p>
+
+                <div class="d-flex align-items-center small text-warning mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                  <span class="text-muted ms-1">(4.5)</span>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold">Free</span>
+                  <a href="#" class="text-primary small">Get Enrolled</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Angular -->
+          <div class="col-md-3">
+            <div class="course-card shadow-sm rounded overflow-hidden">
+              <div class="course-img bg-danger text-center py-4">
+                <img src="c:\Users\DELL\Downloads\courses.png" width="80" />
+              </div>
+
+              <div class="p-3">
+                <span class="badge bg-warning">Advance</span>
+
+                <h6 class="mt-2 fw-bold">Angular - the complete guide</h6>
+                <p class="text-muted small mb-1">By: Jeffrey Mccoy</p>
+
+                <div class="d-flex align-items-center small text-warning mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                  <span class="text-muted ms-1">(4.5)</span>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold">$49.00</span>
+                  <a href="#" class="text-primary small">Get Enrolled</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Python -->
+          <div class="col-md-3">
+            <div class="course-card shadow-sm rounded overflow-hidden">
+              <div class="course-img bg-info text-center py-4">
+                <img src="c:\Users\DELL\Downloads\courses.png" width="80" />
+              </div>
+
+              <div class="p-3">
+                <span class="badge bg-success">Beginner</span>
+
+                <h6 class="mt-2 fw-bold">The Python Course: build web</h6>
+                <p class="text-muted small mb-1">By: Douglas Howell</p>
+
+                <div class="d-flex align-items-center small text-warning mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                  <span class="text-muted ms-1">(4.5)</span>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold">$19.00</span>
+                  <a href="#" class="text-primary small">Get Enrolled</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
